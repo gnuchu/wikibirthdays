@@ -1,0 +1,9 @@
+Get page id:
+https://en.wikipedia.org/w/api.php?action=query&format=json&prop=info&titles=June_21
+
+
+action=query&titles=Image:Chandler+Riggs+by+Gage+Skidmore+2.jpg&prop=imageinfo&iiprop=url
+
+
+
+https://en.wikipedia.org/w/api.php?action=query&titles=File:Chandler+Riggs+by+Gage+Skidmore+2.jpg&prop=imageinfo&iiprop=url
