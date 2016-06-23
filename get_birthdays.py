@@ -65,16 +65,34 @@ while start_date < end_date:
 
   row = tr_s + '<td colspan="2" style="text-align: center; background-color: #F7F7F7;">' + month + ' ' + day + td_e + tr_e
   f.write(row + "\n")
+  page_title = ""
 
   for li in lis:
     row = ""
     row = str(li).replace('<li>','<td>')
     row = row.replace('</li>','</td>')
     row = row.replace('/wiki/', 'https://en.wikipedia.org/wiki/')
+
+    for a in li.find_all('a'):
+      page_title = a['href']
+      try:
+        int(page_title)
+        pass
+      except:
+        page_title = page_title.replace('https://en.wikipedia.org/wiki/',"")
+
+    page_title = page_title.replace('/wiki/',"")
     f.write('<tr>')
     f.write(row+"\n")
-    f.write('<td></td>')
+    f.write('<td>' + page_title + '</td>')
     f.write('</tr>')
 
 f.write(footer+"\n")
 f.close()
+
+def get_image_url(page_title):
+  placeholder = "https://placeholdit.imgix.net/~text?txtsize=33&txt=ImageN/A&w=200&h=200"
+  url = base_url + '/wiki/' + page_title
+  
+
+
