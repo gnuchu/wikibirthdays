@@ -74,8 +74,8 @@ def main():
 
   f.write(header+"\n")
 
-  start_date = date.today() + timedelta(days=-4)
-  end_date = date.today() + timedelta(days=5)
+  start_date = date.today() + timedelta(days=-2)
+  end_date = date.today() + timedelta(days=4)
 
   tr_s = '<tr>'
   tr_e = '</tr>'
